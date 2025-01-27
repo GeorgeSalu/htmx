@@ -9,7 +9,7 @@ const createTodoTemplate = (todo) => `
         <span>${todo.title}</span>
         <div>
             <form class="d-inline">
-                <button>${todo.completed ? "Desmarcar" : "Marcar conclusão"}</button>
+                <button class="btn btn-link">${todo.completed ? "Desmarcar" : "Marcar conclusão"}</button>
             </form>
             <form class="d-inline">
                 <button class="btn btn-danger">Excluir</button>
