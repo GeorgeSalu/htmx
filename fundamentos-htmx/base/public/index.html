@@ -23,10 +23,15 @@
     <!-- hx-post => requisicao post -->
     <!-- name => valor que é enviado para o backend age: 30 => req.body.age -->
     <!-- form => req.body.algumacoisa -->
-    <form hx-post="/enviar-formulario" hx-trigger="submit">
+    <form hx-post="/enviar-formulario" hx-trigger="submit" hx-target="#conteudo-post">
         <label for="name">Nome:</label>
         <input type="text" name="nome">
         <button>Enviar</button>
     </form>
+
+    <!-- definindo um target para a resposta do form -->
+    <div id="conteudo-post"></div>
+
+
 </body>
 </html>
