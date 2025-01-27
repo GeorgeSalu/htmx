@@ -32,6 +32,11 @@
     <!-- definindo um target para a resposta do form -->
     <div id="conteudo-post"></div>
 
+    <!-- swap => tenha mas precisao na subtituicao do html -->
+    <button hx-get="/trocar-conteudo" hx-target="#conteudo-swap" hx-swap="outerHTML">
+        carregar conteudo
+    </button>
 
+    <div id="conteudo-swap"></div>
 </body>
 </html>
