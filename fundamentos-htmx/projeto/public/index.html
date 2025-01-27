@@ -9,6 +9,21 @@
     <script src="scripts.js" defer></script>
 </head>
 <body>
-    
+    <div class="container">
+        <h1 class="mt-5">Lista de tarefas</h1>
+        <div class="mb-3">
+            Form pesquisa
+        </div>
+        <form id="todo-form" class="mb-3" 
+              hx-post="/api/todos" hx-target="#todo-list" hx-swap="beforeend" hx-on::after-request="this.reset()">
+            <div class="input-group">
+                <input type="text" name="title" class="form-control"  />
+                <div class="input-group-append">
+                    <button class="btn btn-primary">Adicionar</button>
+                </div>
+            </div>
+        </form>
+        <ul id="todo-list" class="list-group"></ul>
+    </div>
 </body>
 </html>

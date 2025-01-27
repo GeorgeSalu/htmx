@@ -11,3 +11,5 @@ router.post("/todos", async (req, res) => {
 
     res.send("Todo criado");
 })
+
+module.exports = router
