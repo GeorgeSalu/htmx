@@ -32,7 +32,7 @@ router.post("/todos", async (req, res) => {
 
     const newTodo = await Todo.create({ title });
 
-    res.send("Todo criado");
+    res.send(createTodoTemplate(newTodo));
 })
 
 module.exports = router
