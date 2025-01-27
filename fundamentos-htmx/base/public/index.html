@@ -19,5 +19,12 @@
     </p>
 
     <div id="conteudo-get"></div>
+
+
+    <form hx-post="/enviar-formulario" hx-trigger="submit">
+        <label for="name">Nome:</label>
+        <input type="text" name="nome">
+        <button>Enviar</button>
+    </form>
 </body>
 </html>
