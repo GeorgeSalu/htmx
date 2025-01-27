@@ -48,5 +48,11 @@
     </form>
 
     <div id="valores-adicionais"></div>
+
+    <!-- polling => sao reqs a cada x tempo no servidor -->
+    <div hx-get="/tempo-servidor" hx-trigger="every 5s" hx-target="#tempo-servidor">
+        <p>Carregando hora do servidor....</p>
+    </div>
+    <div id="tempo-servidor"></div>
 </body>
 </html>
