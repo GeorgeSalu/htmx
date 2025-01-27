@@ -38,5 +38,15 @@
     </button>
 
     <div id="conteudo-swap"></div>
+
+    <!-- hx-vals => precisar enviar valores extra -->
+    <!-- adiciona mas valores ao req.body -->
+    <form hx-post="/valores-adicionais" hx-trigger="submit" hx-target="#valores-adicionais" hx-vals='{"valorExtra": "este é um valor adicional"}'>
+        <label for="name">Nome:</label>
+        <input type="text" name="nome">
+        <button>Enviar</button>
+    </form>
+
+    <div id="valores-adicionais"></div>
 </body>
 </html>
