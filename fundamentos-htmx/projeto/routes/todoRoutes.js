@@ -60,4 +60,20 @@ router.put("/todos/:id", async(req, res) => {
     res.send(createTodoTemplate(updatedTodo));
 })
 
+router.post("/search", async (req, res) => {
+    const { search } = req.body;
+  
+    console.log(search);
+  
+    let where = {};
+  
+    if (search) {
+      where.title = { [Sequelize.Op.like]: `%${search}%` };
+    }
+  
+    const todos = await Todo.findAll({ where });
+    const todoItems = todos.map(createTodoTemplate).join("");
+    res.send(todoItems);
+  });
+
 module.exports = router

@@ -14,7 +14,8 @@
         <div class="mb-3">
             <form class="form-inline">
                 <label for="search" class="mr-2">Buscar : </label>
-                <input type="text" id="search" name="search" class="form-control" placeholder="Buscar taregafs" />
+                <input type="text" id="search" name="search" class="form-control" placeholder="Buscar tarefas" hx-post="/api/search" 
+                       hx-trigger="keyup changed delay:500ms" hx-target="#todo-list" hx-swap="innerHTML" />
             </form>
         </div>
         <form id="todo-form" class="mb-3" 
