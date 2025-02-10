@@ -22,16 +22,16 @@ app.get("/hello", (req, res) => {
 
 // Aula 1: Requisição HTTP (hx-get com post)
 app.post("/post", (req, res) => {
-  res.send("Requisição POST recebida!");
+  res.send("Requisição Post recebida!");
 });
 
 // Aula 2: Continuando com Put e Delete
 app.put("/put", (req, res) => {
-  res.send("Requisição PUT recebida!");
+  res.send("Requisição Put recebida!");
 });
 
 app.delete("/delete", (req, res) => {
-  res.send("Requisição DELETE recebida!");
+  res.send("Requisição Delete recebida!");
 });
 
 // Aula 3: Gatilho de Requisição (hx-trigger)
@@ -107,12 +107,12 @@ app.post("/upload", upload.single("arquivo"), (req, res) => {
 // Aula 12: Sincronizando Requisições
 app.get("/getData", (req, res) => {
   setTimeout(() => {
-    res.send("Resposta da Requisição GET");
+    res.send("Resposta da Requisição Get");
   }, 3000);
 });
 
 app.post("/postData", (req, res) => {
-  res.send("Resposta da Requisição POST");
+  res.send("Resposta da Requisição Post");
 });
 
 // Aula 13: Cancelando Requisições
