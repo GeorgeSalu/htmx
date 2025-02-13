@@ -8,12 +8,12 @@
 </head>
 <body>
     <!-- Aula 1: Requisição HTTP (hx-get com post) -->
-    <h1>Aula 1</h1>
+    <h2>Aula 1</h2>
     <button hx-post="http://localhost:3000/post" hx-target="#result">enviar post</button>
     <div id="result"></div>
 
     <!-- Aula 2: Continuando com Put e Delete -->
-    <h1>Aula 2</h1>
+    <h2>Aula 2</h2>
     <button hx-put="http://localhost:3000/put" hx-target="#result-put">enviar put</button>
     <div id="result-put"></div>
 
@@ -21,7 +21,7 @@
     <div id="result-delete"></div>
 
     <!-- Aula 3: Gatilho de Requisição (hx-trigger) -->
-    <h3>Aula 3</h3>
+    <h2>Aula 3</h2>
     <input type="text" hx-get="http://localhost:3000/trigger" hx-target="#result-trigger"  hx-trigger="keyup">
     <div id="result-trigger"></div>
 </body>
