@@ -79,5 +79,16 @@
     </button>
     <div id="result-progress"></div>
     <div id="loading-indicator">Carregando ....</div>
+
+    <!-- Aula 9: Enviando Dados -->
+    <h2>Aula 9</h2>
+    <form hx-post="http://localhost:3000/submit" hx-target="#result-form">
+        <input type="text" name="nome" placeholder="digite seu nome" >
+        <input type="text" name="email" placeholder="digite seu email" >
+        <button type="submit">Enviar</button>
+    </form>
+
+    <div id="result-form"></div>
+
 </body>
 </html>
