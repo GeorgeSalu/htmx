@@ -105,5 +105,17 @@
     </form>
 
     <div id="result-upload"></div>
+
+    <!-- Aula 12: Sincronizando Requisições -->
+    <h2>Aula 12</h2>
+    <button id="getRequest" hx-get="http://localhost:3000/getData" hx-target="#result-get" >
+        Requisicao Get com delay
+    </button>
+    <button hx-post="http://localhost:3000/postData" hx-target="#result-post" hx-sync="#getRequest:queue">
+        Requisicao Pot
+    </button>
+
+    <div id="result-get"></div>
+    <div id="result-post"></div>
 </body>
 </html>
