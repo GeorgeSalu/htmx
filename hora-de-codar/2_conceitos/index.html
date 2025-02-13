@@ -6,6 +6,7 @@
     <title>conceitos fundamentais</title>
     <script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <!-- Aula 1: Requisição HTTP (hx-get com post) -->
@@ -43,5 +44,17 @@
         delay de 2 segundos
     </button>
     <div id="result-external"></div>
+
+    <!-- Aula 5: Filtros de Trigger -->
+    <h2>Aula 5</h2>
+    <button hx-get="http://localhost:3000/control-click" hx-target="#result-control-click" hx-trigger="click[ctrlKey]">
+        Control click
+    </button>
+    <div id="result-control-click"></div>
+
+    <button hx-get="http://localhost:3000/global-condition" hx-target="#result-global-condition" hx-trigger="click[checkCondition()]">
+        Trigger com funcao js
+    </button>
+    <div id="result-global-condition"></div>
 </body>
 </html>

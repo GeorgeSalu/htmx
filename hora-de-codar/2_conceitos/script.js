@@ -1,0 +1,3 @@
+function checkCondition() {
+    return true;
+}
