@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>conceitos fundamentais</title>
     <script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Aula 1: Requisição HTTP (hx-get com post) -->
@@ -24,5 +25,22 @@
     <h2>Aula 3</h2>
     <input type="text" hx-get="http://localhost:3000/trigger" hx-target="#result-trigger"  hx-trigger="keyup">
     <div id="result-trigger"></div>
+
+    <h2>Aula 4</h2>
+    <button hx-get="http://localhost:3000/once" hx-target="#result-once" hx-trigger="click once">
+        clique uma vez
+    </button>
+    <div id="result-once"></div>
+
+    <button hx-get="http://localhost:3000/delay" hx-target="#result-delay" hx-trigger="click delay:2000ms">
+        delay de 2 segundos
+    </button>
+    <div id="result-delay"></div>
+
+    <button id="external-trigger">Clique para acionar</button>
+    <button id="trigger-button" hx-get="http://localhost:3000/external" hx-target="#result-external" hx-trigger="click from:#external-trigger">
+        delay de 2 segundos
+    </button>
+    <div id="result-external"></div>
 </body>
 </html>
