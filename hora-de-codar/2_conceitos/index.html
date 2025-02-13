@@ -117,5 +117,16 @@
 
     <div id="result-get"></div>
     <div id="result-post"></div>
+
+    <!-- Aula 13: Cancelando Requisições -->
+    <h2>Aula 13</h2>
+    <button id="start-request" hx-get="http://localhost:3000/long-request" hx-target="#result-long-request" >
+        Executar requisicao longa
+    </button>
+    <button onclick="htmx.trigger('#start-request', 'htmx:abort')">
+        cancelar requisicao 
+    </button>
+
+    <div id="result-long-request"></div>
 </body>
 </html>
