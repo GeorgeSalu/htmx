@@ -71,5 +71,13 @@
     <div id="div-polling" hx-get="http://localhost:3000/polling" hx-target="#result-polling" hx-trigger="every 5s"></div>
     <div id="result-polling"></div>
     -->
+
+    <!-- Aula 8: Indicador de Progresso com HTMX -->
+    <h2>Aula 8</h2>
+    <button hx-get="http://localhost:3000/progress" hx-target="#result-progress" hx-indicator="#loading-indicator">
+        Iniciar requisicao
+    </button>
+    <div id="result-progress"></div>
+    <div id="loading-indicator">Carregando ....</div>
 </body>
 </html>

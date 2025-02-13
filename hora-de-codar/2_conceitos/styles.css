@@ -8,3 +8,11 @@
     height: 100px;
     background-color: blueviolet;
 }
+
+#loading-indicator {
+    display: none;
+}
+
+#loading-indicator.htmx-request {
+    display: block;
+}
