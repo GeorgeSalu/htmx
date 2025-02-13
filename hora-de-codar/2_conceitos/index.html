@@ -96,5 +96,14 @@
         Deletar
     </button>
     <div id="result-confirm"></div>
+
+    <!-- Aula 11: Upload de Arquivos -->
+    <h2>Aula 11</h2>
+    <form hx-post="http://localhost:3000/upload" hx-target="#result-upload" enctype="multipart/form-data">
+        <input type="file" name="arquivo"  >
+        <button type="submit">Enviar</button>
+    </form>
+
+    <div id="result-upload"></div>
 </body>
 </html>
