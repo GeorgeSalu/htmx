@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carregamento com htmx</title>
     <script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
+    <script src="scripts.js" defer></script>
 </head>
 <body>
     <h2>Aula 1</h2>
@@ -59,5 +60,16 @@
         Enviar requisicao
     </button>
     <div id="result-params"></div>
+
+    <h2>Aula 7</h2>
+    <button hx-get="http://localhost:3000/userData" hx-target="#user-data" >
+        Enviar requisicao
+    </button>
+    <div id="user-data"></div>
+
+    <button id="load-user-data" hx-get="http://localhost:3000/userData" hx-target="#user-data-2" >
+        Enviar requisicao
+    </button>
+    <div id="user-data-2"></div>
 </body>
 </html>
