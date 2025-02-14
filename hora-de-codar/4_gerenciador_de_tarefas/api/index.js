@@ -33,6 +33,20 @@ app.post('/todos', async(req, res) => {
         return;
     }
 
+    try {
+        
+        const novaTarefa = await Todo.create({
+            texto,
+            dificuldade,
+            completa: false
+        })
+
+        res.send(`<div class="alert alert-success" role="alert">Tarefa ${novaTarefa.texto} criada com sucesso</div>`)
+
+    } catch (error) {
+        res.send(`<div class="alert alert-danger" role="alert">erro ao criar tarefa</div>`)
+    }
+
 })
 
 sequelize.sync().then(() => {
