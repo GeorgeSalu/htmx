@@ -23,6 +23,18 @@ const Todo = sequelize.define("Todo", {
     completa: DataTypes.BOOLEAN,
 })
 
+// rota para criacao de tarefas
+app.post('/todos', async(req, res) => {
+
+    const { texto, dificuldade } = req.body;
+
+    if(!texto || !dificuldade) {
+        res.send(`<div class="alert alert-danger" role="alert">texto e dificuldade sao obrigatorias</div>`)
+        return;
+    }
+
+})
+
 sequelize.sync().then(() => {
     app.listen(port, () => {
         console.log(`servidor rodando na porta : ${port}`)

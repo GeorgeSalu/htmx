@@ -15,7 +15,7 @@
                 <h1 class="text-center mb-4">Gerenciador de tarefas</h1>
 
                 <!-- formulario de criacao -->
-                <form class="mb-4">
+                <form class="mb-4" id="todo-form" hx-post="http://localhost:3000/todos" hx-target="#msg">
                     <div class="form-group">
                         <input type="text" class="form-control" name="texto" placeholder="digite o texto" id="todo-texto" >
                     </div>
