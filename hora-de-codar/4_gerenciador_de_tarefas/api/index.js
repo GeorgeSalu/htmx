@@ -70,9 +70,9 @@ app.get('/todos', async(req, res) => {
                     <p class="card-text">Dificuldade: ${tarefa.dificuldade}</p>
                     <p class="card-text">Status: ${tarefa.completa ? "Completa" : "Incompleta"}</p>
 
-                <button class="btn btn-primary" onclick="editarTarefa(${tarefa.id}, '${tarefa.texto}', '${tarefa.dificuldade}')">Editar</button>
-                <button class="btn btn-danger" onclick="deletarTarefa(${tarefa.id})">Deletar</button>
-                <button class="btn btn-secondary" onclick="toggleTarefa(${tarefa.id})">${tarefa.completa ? "Desmarcar" : "Marcar como completa"}</button>
+                    <button class="btn btn-primary" onclick="editarTarefa(${tarefa.id}, '${tarefa.texto}', '${tarefa.dificuldade}')">Editar</button>
+                    <button class="btn btn-danger" onclick="deletarTarefa(${tarefa.id})">Deletar</button>
+                    <button class="btn btn-secondary" onclick="toggleTarefa(${tarefa.id})">${tarefa.completa ? "Desmarcar" : "Marcar como completa"}</button>
                 </div>
             </div>    
         `).join("");
