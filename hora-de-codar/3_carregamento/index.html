@@ -21,5 +21,16 @@
     </button>
     
     <div id="swapContent"></div>
+
+    <h2>Aula 3</h2>
+    
+    <div id="swapArea">
+        <button hx-get="http://localhost:3000/content" hx-target="#swapArea" hx-swap="afterbegin">
+            After begin
+        </button>
+        <button hx-get="http://localhost:3000/content" hx-target="#swapArea" hx-swap="beforebegin">
+            Before begin
+        </button>
+    </div>
 </body>
 </html>
