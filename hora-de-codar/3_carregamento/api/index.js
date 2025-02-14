@@ -37,8 +37,8 @@ app.get("/subset", (req, res) => {
 });
 
 app.get("/advancedParams", (req, res) => {
-  const lang = req.query.lang[0];
-  const user = req.query.user[0];
+  const lang = req.query.lang;
+  const user = req.query.user;
 
   res.send(`Parâmetros recebidos: lang = ${lang}, user = ${user}`);
 });
