@@ -10,5 +10,16 @@
     <h2>Aula 1</h2>
     <button hx-get="http://localhost:3000/content" hx-target=".targetDiv">Atualizar conteudo</button>
     <div class="targetDiv"></div>
+
+    <h2>Aula 2</h2>
+    <button hx-get="http://localhost:3000/newContent" hx-target="#swapContent">
+        Atualizar conteudo
+    </button>
+
+    <button hx-get="http://localhost:3000/newContent" hx-target="#swapContent" hx-swap="innerHTML">
+        Atualizar conteudo com swap
+    </button>
+    
+    <div id="swapContent"></div>
 </body>
 </html>
