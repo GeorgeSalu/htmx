@@ -83,6 +83,27 @@ app.get('/todos', async(req, res) => {
     }
 })
 
+// deletando uma tarefa
+app.delete("/todos/:id", async (req, res) => {
+
+    try {
+        
+        const tarefa = await Todo.findByPk(req.params.id)
+
+        if(tarefa) {
+
+            await tarefa.destroy()
+            res.send(`<div class="alert alert-success" role="alert">Tarefa ${novaTarefa.texto} excluida sucesso</div>`)
+        } else {
+            res.send(`<div class="alert alert-danger" role="alert">tarefa nao encontrada</div>`)
+        }
+
+    } catch (error) {
+        res.send(`<div class="alert alert-danger" role="alert">erro ao deletar tarefa</div>`)
+    }
+
+});
+
 sequelize.sync().then(() => {
     app.listen(port, () => {
         console.log(`servidor rodando na porta : ${port}`)
