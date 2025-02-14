@@ -56,12 +56,26 @@ app.get('/todos', async(req, res) => {
         const tarefas = await Todo.findAll();
 
         if(tarefas.length === 0) {
-            res.send(`<p>erro ao criar tarefa</p>`);
+            res.send(`
+                <div class="alert alert-danger" role="alert">nao existe tarefa cadastrada</div>
+            `);
             return;
         }
 
 
-        let html = tarefas.map((tarefa) => `<p>${tarefa.texto}</p>`).join("");
+        let html = tarefas.map((tarefa) => `
+            <div class="card mb-3 ${tarefa.completa ? "bg-light border-success" : ""}">
+                <div class="card-body ${tarefa.completa ? "font-italic" : ""}">
+                    <h5 class="card-title">Tarefa : ${tarefa.texto}</h5>
+                    <p class="card-text">Dificuldade: ${tarefa.dificuldade}</p>
+                    <p class="card-text">Status: ${tarefa.completa ? "Completa" : "Incompleta"}</p>
+
+                <button class="btn btn-primary" onclick="editarTarefa(${tarefa.id}, '${tarefa.texto}', '${tarefa.dificuldade}')">Editar</button>
+                <button class="btn btn-danger" onclick="deletarTarefa(${tarefa.id})">Deletar</button>
+                <button class="btn btn-secondary" onclick="toggleTarefa(${tarefa.id})">${tarefa.completa ? "Desmarcar" : "Marcar como completa"}</button>
+                </div>
+            </div>    
+        `).join("");
 
         res.send(html);
     } catch (error) {
