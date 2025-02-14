@@ -53,7 +53,7 @@ app.get("/userData", (req, res) => {
 });
 
 app.get("/lazyImage", (req, res) => {
-  res.send('<img src="https://via.placeholder.com/500">');
+  res.send('<img src="https://placehold.co/500">');
 });
 
 app.listen(port, () => {
