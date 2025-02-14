@@ -21,7 +21,7 @@ function atualizarListaTarefas() {
 function deletarTarefa(id) {
 
     if(confirm("Tem certeza que desja excluir a tarefa ??")) {
-        htmx.ajax("DELETE", "http://localhost:3000/todos/" + id, "#todo-list");
+        htmx.ajax("DELETE", "http://localhost:3000/todos/" + id, "#msg");
         atualizarListaTarefas();
     }
 
