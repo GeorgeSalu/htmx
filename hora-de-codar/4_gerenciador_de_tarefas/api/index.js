@@ -49,6 +49,26 @@ app.post('/todos', async(req, res) => {
 
 })
 
+// trazer tarefas
+app.get('/todos', async(req, res) => {
+    try {
+        
+        const tarefas = await Todo.findAll();
+
+        if(tarefas.length === 0) {
+            res.send(`<p>erro ao criar tarefa</p>`);
+            return;
+        }
+
+
+        let html = tarefas.map((tarefa) => `<p>${tarefa.texto}</p>`).join("");
+
+        res.send(html);
+    } catch (error) {
+        res.send(`<div class="alert alert-danger" role="alert">erro ao criar tarefa</div>`)
+    }
+})
+
 sequelize.sync().then(() => {
     app.listen(port, () => {
         console.log(`servidor rodando na porta : ${port}`)
