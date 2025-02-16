@@ -34,3 +34,23 @@ function toggleTarefa(id) {
     atualizarListaTarefas();
 
 }
+
+// editar tarefa
+function editarTarefa(id, texto, dificuldade) {
+
+    document.querySelector("#edit-id").value = id;
+    document.querySelector("#edit-texto").value = texto;
+    document.querySelector("#edit-dificuldade").value = dificuldade;
+
+    document.querySelector("#edit-form").classList.remove("d-none");
+    document.querySelector("#todo-form").classList.add("d-none");
+
+}
+
+// cancelar edicao
+function cancelEdit() {
+
+    document.querySelector("#edit-form").classList.add("d-none");
+    document.querySelector("#todo-form").classList.remove("d-none");
+
+}
