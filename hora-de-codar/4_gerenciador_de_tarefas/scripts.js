@@ -26,3 +26,11 @@ function deletarTarefa(id) {
     }
 
 }
+
+// atualizar status da tarefas
+function toggleTarefa(id) {
+
+    htmx.ajax("PATCH", "http://localhost:3000/todos/" + id, "#msg");
+    atualizarListaTarefas();
+
+}

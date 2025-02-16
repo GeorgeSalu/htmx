@@ -104,6 +104,30 @@ app.delete("/todos/:id", async (req, res) => {
 
 });
 
+app.patch("/todos/:id", async (req, res) => {
+
+    try {
+        
+        const tarefa = await Todo.findByPk(req.params.id)
+
+        if(tarefa) {
+
+            tarefa.completa = !tarefa.completa;
+
+            await tarefa.save();
+
+            res.send(`<div class="alert alert-success" role="alert">A tarefa ${tarefa.texto} foi marcada como ${tarefa.completa ? "completa" : "imcompleta"}</div>`)
+        } else {
+            res.send(`tarefa nao encontrada`)
+        }
+
+    } catch (error) {
+        res.send(`erro ao deletar tarefa`)
+    }
+
+});
+
+
 sequelize.sync().then(() => {
     app.listen(port, () => {
         console.log(`servidor rodando na porta : ${port}`)
