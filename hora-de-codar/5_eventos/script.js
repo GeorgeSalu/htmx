@@ -28,3 +28,7 @@
         console.log("depois do request")
     })
 */
+
+document.body.addEventListener("htmx:responseError", function(event) {
+    alert("ocorreu um erro interno tente mas tarde")
+})
