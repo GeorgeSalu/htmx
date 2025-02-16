@@ -10,7 +10,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "autoprefixer": "^10.4.20",
+    "autoprefixer": "^10.4.17",
     "bcrypt": "^5.1.1",
     "connect-sqlite3": "^0.9.13",
     "ejs": "^3.1.9",
