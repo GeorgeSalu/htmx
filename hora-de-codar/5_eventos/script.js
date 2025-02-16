@@ -57,3 +57,15 @@
 
     }
 */
+
+const customEventButton = document.querySelector("#customEventButton");
+
+customEventButton.addEventListener("click", function() {
+    htmx.trigger(customEventButton, "customEvent")
+})
+
+document.body.addEventListener("customEvent", function(event) {
+    console.log("evento acionado")
+
+    htmx.ajax("GET", "http://localhost:3000/customEvent", "#custom-event-response")
+})
