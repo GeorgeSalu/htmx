@@ -36,5 +36,22 @@
 
     <h2>Aula 6</h2>
     <p>Logger</p>
+
+    <h2>Aula 7</h2>
+    <input type="text" hx-get="http://localhost:3000/onChange" hx-target="#change-response" hx-trigger="keyup" >
+    <div id="change-response"></div>
+
+    <input type="text" hx-get="http://localhost:3000/onChange" hx-target="#focus-response" hx-trigger="focus" >
+    <div id="focus-response"></div>
+
+    <input type="text" hx-get="http://localhost:3000/onChange" hx-target="#blur-response" hx-trigger="blur" >
+    <div id="blur-response"></div>
+
+    <form hx-post="http://localhost:3000/formValidation" hx-target="#form-response">
+        <input type="text" name="username">
+        <input type="text" name="email">
+        <button>Enviar</button>
+    </form>
+    <div id="form-response"></div>
 </body>
 </html>

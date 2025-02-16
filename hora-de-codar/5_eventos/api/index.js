@@ -55,7 +55,7 @@ app.get("/testLogger", (req, res) => {
 
 // Rota para a Aula 7: Manipulação de Eventos de Formulário
 app.get("/onChange", (req, res) => {
-  res.send("<p>Evento change detectado.</p>");
+  res.send(`<p>Evento change detectado. ${Math.random()} </p>`);
 });
 
 app.get("/onFocus", (req, res) => {
