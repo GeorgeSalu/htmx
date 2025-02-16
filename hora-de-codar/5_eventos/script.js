@@ -29,6 +29,9 @@
     })
 */
 
-document.body.addEventListener("htmx:responseError", function(event) {
-    alert("ocorreu um erro interno tente mas tarde")
-})
+/*
+    dispara depois de uma erro no servidor
+    document.body.addEventListener("htmx:responseError", function(event) {
+        alert("ocorreu um erro interno tente mas tarde")
+    })
+*/
