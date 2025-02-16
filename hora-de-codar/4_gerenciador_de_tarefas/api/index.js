@@ -93,13 +93,13 @@ app.delete("/todos/:id", async (req, res) => {
         if(tarefa) {
 
             await tarefa.destroy()
-            res.send(`<div class="alert alert-success" role="alert">Tarefa ${novaTarefa.texto} excluida sucesso</div>`)
+            res.send(`<div class="alert alert-success" role="alert">Tarefa excluida sucesso</div>`)
         } else {
-            res.send(`<div class="alert alert-danger" role="alert">tarefa nao encontrada</div>`)
+            res.send(`tarefa nao encontrada`)
         }
 
     } catch (error) {
-        res.send(`<div class="alert alert-danger" role="alert">erro ao deletar tarefa</div>`)
+        res.send(`erro ao deletar tarefa`)
     }
 
 });
