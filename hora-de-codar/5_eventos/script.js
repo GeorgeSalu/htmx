@@ -18,11 +18,13 @@
     })
 */
 
+/*
+    eventos de antes e depois do swap
+    document.body.addEventListener("htmx:beforeRequest", function(event) {
+        console.log("antes do request")
+    });
 
-document.body.addEventListener("htmx:beforeRequest", function(event) {
-    console.log("antes do request")
-});
-
-document.body.addEventListener("htmx:afterRequest", function(event) {
-    console.log("depois do request")
-})
+    document.body.addEventListener("htmx:afterRequest", function(event) {
+        console.log("depois do request")
+    })
+*/
