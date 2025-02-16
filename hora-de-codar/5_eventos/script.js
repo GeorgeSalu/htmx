@@ -35,3 +35,12 @@
         alert("ocorreu um erro interno tente mas tarde")
     })
 */
+
+document.body.addEventListener("htmx:configRequest", function(event) {
+    
+    event.detail.headers["novo_token"] = "HSD*D2332222";
+
+    event.detail.parameters["param1"] = "valor do param 1";
+    event.detail.parameters["param2"] = "valor do param 2";
+
+})
