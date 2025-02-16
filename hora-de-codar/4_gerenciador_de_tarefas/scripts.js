@@ -1,5 +1,10 @@
 document.body.addEventListener("htmx:afterRequest", function(event) {
 
+    if(event.target.getAttribute("id") === "edit-form") {
+        cancelEdit();
+        atualizarListaTarefas();
+    }
+
     if(event.target.getAttribute("id") === "todo-form") {
         resetForm();
         atualizarListaTarefas();
