@@ -48,10 +48,12 @@
     })
 */
 
-htmx.logger = function(elt, event, data) {
-    
-    console.log("evento htmx: ",event);
-    console.log("elemento alvo: ",elt);
-    console.log("detalhes do evento: ",data);
+/*
+    htmx.logger = function(elt, event, data) {
+        
+        console.log("evento htmx: ",event);
+        console.log("elemento alvo: ",elt);
+        console.log("detalhes do evento: ",data);
 
-}
+    }
+*/
