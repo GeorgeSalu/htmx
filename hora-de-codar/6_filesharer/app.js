@@ -1,6 +1,6 @@
 const express = require("express");
-const sessions = require("express-session")
-const SQLiteStore = require("connect-sqlite3")(sessions);
+const session = require("express-session")
+const SQLiteStore = require("connect-sqlite3")(session);
 
 const app = express();
 const port = 3000;
