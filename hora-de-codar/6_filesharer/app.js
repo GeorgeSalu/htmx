@@ -11,7 +11,14 @@ app.use(session({
     secret: "segredo",
     resave: false,
     saveUninitialized: false
-}))
+}));
+
+app.use((req, res, next) => {
+    if(req.session) {
+        res.locals.session = req.session;
+    }
+    next();
+});
 
 // configuracao ejs
 app.set("view engine", "ejs");
@@ -24,6 +31,7 @@ app.use(express.urlencoded({ extended: true }))
 
 // rotas
 const authRoutes = require("./routes/auth");
+const adminRoutes = require("./routes/admin");
 
 app.get("/", (req, res) => {
 
@@ -31,6 +39,7 @@ app.get("/", (req, res) => {
 })
 
 app.use("/auth", authRoutes);
+app.use("/admin", adminRoutes);
 
 app.listen(port, () => {
     console.log(`servidor inicializado na porta ${port}`)
