@@ -6,6 +6,12 @@ const app = express();
 const port = 3000;
 
 // gerenciamento da secao
+app.use(session({
+    store: new SQLiteStore,
+    secret: "segredo",
+    resave: false,
+    saveUninitialized: false
+}))
 
 // configuracao ejs
 app.set("view engine", "ejs");
