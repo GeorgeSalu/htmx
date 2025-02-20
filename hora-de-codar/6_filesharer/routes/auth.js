@@ -37,4 +37,38 @@ router.post("/register", async (req, res) => {
 
 });
 
+router.post("/login", async (req, res) => {
+
+    const { nome, email } = req.body;
+
+    try {
+        
+        const user = await User.findOne({ where: { email } });
+
+        if(user && (await bcrypt.compare(senha, user.senha))) {
+
+            req.session.userId = user.id;
+
+            res.setHeader("HX-Redirect", "/admin");
+
+            res.send("Usuario logado");
+
+        } else {
+            res.send("Falha no login: credenciais invalidas");
+        }
+
+    } catch (error) {
+        res.send("erro ao logar usuario");
+    }
+
+});
+
+router.get("/logout", (req, res) => {
+    req.session.destroy(() => {
+        res.setHeader("HX-Redirect", "/");
+
+        res.send("logout efetuado");
+    })
+})
+
 module.exports = router;
