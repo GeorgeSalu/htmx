@@ -17,10 +17,14 @@ app.use(express.urlencoded({ extended: true }))
 // caminho para arquivos
 
 // rotas
+const authRoutes = require("./routes/auth");
+
 app.get("/", (req, res) => {
 
     res.render("layout", { title: "Home", template: "index" });
 })
+
+app.use("/auth", authRoutes);
 
 app.listen(port, () => {
     console.log(`servidor inicializado na porta ${port}`)
