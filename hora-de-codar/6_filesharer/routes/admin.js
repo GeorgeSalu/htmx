@@ -1,10 +1,11 @@
 const express = require("express");
 
 const { User } = require("../models");
+const isAuthenticated = require("../middleware/isAuthenticated");
 
 const router = express.Router();
 
-router.get("/", (req, res) => {
+router.get("/", isAuthenticated, (req, res) => {
 
     res.render("layout", { title: "Login", template: "admin" })
 });
