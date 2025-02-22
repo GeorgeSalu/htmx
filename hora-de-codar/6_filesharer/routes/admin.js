@@ -18,21 +18,30 @@ router.get("/all-files", isAuthenticated, (req, res) => {
     res.render("layout", { title: "Biblioteca de arquivos", template: "allfiles", userId: req.session.userId, files: [] })
 });
 
-router.get("/upload", isAuthenticated, upload.single("arquivo") ,(req, res) => {
+router.post("/upload", isAuthenticated, upload.single("arquivo") , async (req, res) => {
 
     const { nome, descricao } = req.body;
-    const caminho = req.file.path;
+    
     const userId = req.session.userId;
 
-    if(!nome || !file) {
+    if(!nome || !req.file) {
 
-        res.status(422).send("Preencha todos os campos")
+        res.status(422).send("Preencha todos os campos!");
+        return;
     }
 
+    const caminho = req.file.path;
+
     try {
+
+        await File.create({ nome, descricao, caminho, userId  });;
+
+        // buscar e enviar a lista de arquivos;
+
+        res.send("deu certo");
         
     } catch (error) {
-        res.status(500).send("Preencha todos os campos")
+        res.status(500).send("Erro ao criar aquivo!")
     }
 
 });
