@@ -9,6 +9,10 @@
 <body>
     <h1>Aula 1</h1>
 
-    <button hx-get="https://jsonplaceholder.typicode.com/users">buscar usuarios</button>
+    <button hx-get="https://jsonplaceholder.typicode.com/users/1" hx-target="#usuarios" >
+        buscar usuarios
+    </button>
+
+    <div id="usuarios"></div>
 </body>
 </html>
