@@ -12,8 +12,21 @@ app.use(express.urlencoded({ urlencoded: true }))
 
 app.use(express.json())
 
+/*
 app.get("/users", (req, res) => {
     console.log("requisicao foi chamada")
+    res.send("<div><h2 style='color: red;'>ok funcionando</h2></div>")
+})
+*/
+
+app.get("/users", async (req, res) => {
+    
+    const response = await fetch("https://jsonplaceholder.typicode.com/users")
+    const data = await response.json()
+
+    console.log(data)
+    
+
     res.send("<div><h2 style='color: red;'>ok funcionando</h2></div>")
 })
 
