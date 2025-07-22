@@ -35,6 +35,14 @@ app.get("/users", async (req, res) => {
 
 })
 
+app.get("/info", (req, res) => {
+    const nome = req.query.nome
+    const cargo = req.query.cargo
+    console.log(`bem vindo ${nome} com o cargo ${cargo}`)
+
+    res.send("bem vindo fulano")
+})
+
 app.listen(port, () => {
     console.log(`backend rodando : http://localhost:${port}`)
 })

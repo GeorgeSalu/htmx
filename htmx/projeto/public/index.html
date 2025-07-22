@@ -53,5 +53,13 @@
 
     <div hx-get="/primeira-rota" hx-trigger="revealed"></div>
 
+    <h1>Hx Vals</h1>
+
+    <button hx-get="/info" hx-target="#info-teste" hx-vals='{"nome": "Matheus", "cargo": "fullstack"}'>
+        acessar
+    </button>
+
+    <div id="info-teste"></div>
+
 </body>
 </html>
