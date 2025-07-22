@@ -15,7 +15,9 @@ app.use(express.json())
 
 app.get("/primeira-rota", (req, res) => {
     console.log("requisicao foi chamada")
-    res.send("<div><h2 style='color: red;'>ok funcionando</h2></div>")
+    //res.send("<div><h2 style='color: red;'>ok funcionando</h2></div>")
+
+    res.send("<img src='https://sujeitoprogramador.com/steve.png' width='100' height='100' />")
 })
 
 
