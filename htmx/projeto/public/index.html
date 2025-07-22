@@ -16,11 +16,15 @@
     <div id="primeira-rota"></div>
 
     <br />
-    <button hx-get="/users" hx-target="#usuarios">
+    <button hx-get="/users" hx-target="#usuarios" hx-indicator="#loading">
         buscar usuarios
     </button>
 
     <div id="usuarios"></div>
+
+    <span id="loading" class="htmx-indicator">
+        <img src="img/loading.gif" alt="loading" style="width: 40px; height: 40px;" />
+    </span>
 
 </body>
 </html>

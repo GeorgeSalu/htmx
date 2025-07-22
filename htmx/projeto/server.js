@@ -22,14 +22,17 @@ app.get("/primeira-rota", (req, res) => {
 
 
 app.get("/users", async (req, res) => {
-    
-    const response = await fetch("https://jsonplaceholder.typicode.com/users")
-    const data = await response.json()
 
-    let htmlResponse = data.map((user) => `<div>${user.name} - ${user.email}<div/>`).join("")
-    
+    setTimeout( async () => {
+        const response = await fetch("https://jsonplaceholder.typicode.com/users")
+        const data = await response.json()
 
-    res.send(htmlResponse)
+        let htmlResponse = data.map((user) => `<div>${user.name} - ${user.email}<div/>`).join("")
+        
+
+        res.send(htmlResponse)
+    }, 2500)
+
 })
 
 app.listen(port, () => {
