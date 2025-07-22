@@ -12,12 +12,12 @@ app.use(express.urlencoded({ urlencoded: true }))
 
 app.use(express.json())
 
-/*
-app.get("/users", (req, res) => {
+
+app.get("/primeira-rota", (req, res) => {
     console.log("requisicao foi chamada")
     res.send("<div><h2 style='color: red;'>ok funcionando</h2></div>")
 })
-*/
+
 
 app.get("/users", async (req, res) => {
     
