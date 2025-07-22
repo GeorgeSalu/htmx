@@ -52,6 +52,18 @@ app.get("/dados", (req, res) => {
 
 })
 
+app.get("/dados-user", (req, res) => {
+
+    const users = [
+        { id: 1, name: "matheus", email: "matheus@gmail.com" },
+        { id: 2, name: "ana", email: "ana@gmail.com" },
+        { id: 3, name: "jose", email: "jose@gmail.com" },
+        { id: 4, name: "henrique", email: "henrique@gmail.com" }
+    ]
+
+    res.json(users)
+})
+
 app.listen(port, () => {
     console.log(`backend rodando : http://localhost:${port}`)
 })
