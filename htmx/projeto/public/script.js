@@ -9,8 +9,9 @@ document.addEventListener("htmx:afterRequest", function(event) {
 
         response.forEach( user => {
             htmlDiv += `
+                <p>Id: ${user.id}</p>
                 <p>Nome: ${user.name}</p>
-                <p>Nome: ${user.email}</p>
+                <p>Email: ${user.email}</p>
                 <br/>
             `
         })
