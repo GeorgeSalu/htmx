@@ -10,6 +10,14 @@
 
     <h1>projeto htmx</h1>
 
+    <!--
+        innerHTML | outerHTML
+        afterbegin -> acrescenta o conteudo antes caso tenha algum elemento dentro do pai
+        beforeend -> acrescenta o conteudo depois caso tenha algum elemento dentro do pai
+        beforebegin -> anexa o conteudo antes do elemento do target
+        afterend -> anexa o conteudo depois do elemento do target
+        delete - deleta o retorno
+    -->
     <button hx-get="/primeira-rota" hx-target="#primeira-rota" hx-swap="innerHTML">
         primeira rota
     </button>
