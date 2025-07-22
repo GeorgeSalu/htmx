@@ -35,5 +35,15 @@
         <img src="img/loading.gif" alt="loading" style="width: 40px; height: 40px;" />
     </span>
 
+    <br />
+    <br />
+    <h2>Trigger</h2>
+    <button id="button-trigger">fazer requisicao</button>
+
+    <button style="display: none;" hx-get="/primeira-rota" hx-target="#efeito-trigger" hx-swap="innerHTML" hx-trigger="click from:#button-trigger">
+        trigger efeito
+    </button>
+    <div id="efeito-trigger"></div>
+
 </body>
 </html>
