@@ -44,6 +44,14 @@ app.get("/info", (req, res) => {
     res.send("bem vindo fulano")
 })
 
+app.get("/dados", (req, res) => {
+
+    setTimeout(() => {
+        res.send("dados atualizando com sucesso...")
+    }, 5000)
+
+})
+
 app.listen(port, () => {
     console.log(`backend rodando : http://localhost:${port}`)
 })

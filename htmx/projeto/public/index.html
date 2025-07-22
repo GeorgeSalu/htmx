@@ -61,5 +61,16 @@
 
     <div id="info-teste"></div>
 
+    <h2>Cancelando requisicao</h2>
+    <button hx-get="/dados" hx-target="#dados-result" id="buttonDados">
+        buscar dados
+    </button>
+
+    <button onclick="htmx.trigger('#buttonDados', 'htmx:abort')">
+        cancelar (abort)
+    </button>
+
+    <div id="dados-result"></div>
+
 </body>
 </html>
