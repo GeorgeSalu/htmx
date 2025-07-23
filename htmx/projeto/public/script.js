@@ -21,3 +21,7 @@ document.addEventListener("htmx:afterRequest", function(event) {
     }
 
 })
+
+document.addEventListener("htmx:load", function(event) {
+    console.log(event)
+})
