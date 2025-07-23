@@ -5,3 +5,4 @@
 - Eventos com HTMX;
 - Requisições com HTMX;
 - Interceptando erros;
+- Interceptando requisições;
