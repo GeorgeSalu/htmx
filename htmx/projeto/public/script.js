@@ -1,3 +1,4 @@
+// htmx:afterRequest evento depois de um request
 document.addEventListener("htmx:afterRequest", function(event) {
     
     if(event.target.id === 'busca-dados') {
@@ -22,10 +23,12 @@ document.addEventListener("htmx:afterRequest", function(event) {
 
 })
 
+// htmx:load evento de load da pagina
 document.addEventListener("htmx:load", function(event) {
     //console.log(event)
 })
 
+// htmx:responseError evento que ocorre quando uma request lanca um erro
 document.addEventListener("htmx:responseError", function(event) {
     //console.log(event)
 
