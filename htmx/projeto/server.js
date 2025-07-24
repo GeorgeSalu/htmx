@@ -66,7 +66,7 @@ app.get("/dados-user", (req, res) => {
 
 app.get("/teste", (req, res) => {
 
-    res.status(500).send("Erro ao buscar dados do servidor")
+    res.status(400).send("Erro ao buscar dados do servidor")
 })
 
 app.listen(port, () => {

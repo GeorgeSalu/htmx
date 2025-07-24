@@ -23,5 +23,23 @@ document.addEventListener("htmx:afterRequest", function(event) {
 })
 
 document.addEventListener("htmx:load", function(event) {
-    console.log(event)
+    //console.log(event)
+})
+
+document.addEventListener("htmx:responseError", function(event) {
+    //console.log(event)
+
+    const div = document.querySelector("#result-error")
+
+    if(event.detail.xhr.status === 400) {
+        return div.innerHTML = `<strong style='color: red;'>${event.detail.xhr.responseText}</strong>`
+    }
+
+    if(event.detail.xhr.status === 500) {
+        return div.innerHTML = `<strong style='color: blue;'>${event.detail.xhr.responseText}</strong>`
+    }
+
+    if(event.detail.xhr.status === 401) {
+        return div.innerHTML = `<strong style='color: brown;'>${event.detail.xhr.responseText}</strong>`
+    }
 })
