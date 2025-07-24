@@ -64,6 +64,11 @@ app.get("/dados-user", (req, res) => {
     res.json(users)
 })
 
+app.get("/teste", (req, res) => {
+
+    res.status(500).send("Erro ao buscar dados do servidor")
+})
+
 app.listen(port, () => {
     console.log(`backend rodando : http://localhost:${port}`)
 })
