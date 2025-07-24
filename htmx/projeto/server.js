@@ -69,6 +69,15 @@ app.get("/teste", (req, res) => {
     res.status(400).send("Erro ao buscar dados do servidor")
 })
 
+app.get("/detalhes", (req, res) => {
+
+    console.log("query: ", req.query)
+
+    console.log("headers: ", req.headers)
+
+    res.send("rota detalhes chamada")
+})
+
 app.listen(port, () => {
     console.log(`backend rodando : http://localhost:${port}`)
 })
