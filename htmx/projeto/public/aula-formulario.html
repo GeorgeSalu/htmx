@@ -41,5 +41,18 @@
 
     <div id="result-put"></div>
 
+    <h2>Aplicando select</h2>
+    <select hx-get="/marcas" name="marcas" hx-target="#modelos">
+        <option value="bmw">bmw</option>
+        <option value="audi">audi</option>
+        <option value="toyota">toyota</option>
+    </select>
+
+    <br/><br/>
+    <label>Modelos</label>
+    <select id="modelos" name="modelos">
+        <option>A1</option>
+    </select>
+
 </body>
 </html>

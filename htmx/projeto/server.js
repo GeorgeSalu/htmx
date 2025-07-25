@@ -97,6 +97,34 @@ app.put("/users", (req, res) => {
     res.send(`<h2>O usuario ${nome} tem o cargo: ${cargo}</h2>`)
 })
 
+app.get("/marcas", (req, res) => {
+
+    const marcas = req.query.marcas
+    
+    if(marcas === 'audi') {
+        res.send(`
+            <option value='a3'>a3</option>
+            <option value='q3'>q3</option>
+            <option value='a4'>a4</option>`)
+    }
+
+    if(marcas === 'bmw') {
+        res.send(`
+            <option value='x1'>x1</option>
+            <option value='320i'>320i</option>
+            <option value='x6'>x6</option>`)
+    }
+
+    if(marcas === 'toyota') {
+        res.send(`
+            <option value='corola'>corola</option>
+            <option value='sw4'>sw4</option>
+            <option value='rav4'>rav4</option>`)
+    }
+
+})
+
+
 app.listen(port, () => {
     console.log(`backend rodando : http://localhost:${port}`)
 })
