@@ -54,5 +54,17 @@
         <option>A1</option>
     </select>
 
+    <h2>Input Search</h2>
+    <label>Procurar:</label>
+    <input 
+        type="text" 
+        placeholder="o que esta procurando ?"
+        hx-get="/search"
+        hx-target="#result-busca" 
+        hx-trigger="keyup delay:500ms"
+        name="title" />
+
+    <div id="result-busca"></div>
+
 </body>
 </html>

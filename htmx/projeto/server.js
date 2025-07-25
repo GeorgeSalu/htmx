@@ -124,6 +124,24 @@ app.get("/marcas", (req, res) => {
 
 })
 
+app.get("/search", (req, res) => {
+
+    const usuarios = ['matheus', 'lucas', 'matheus fraga', 'ana']
+
+    const title = req.query.title
+    
+
+    if(!title) {
+        res.send("")
+    }
+
+    const usersData = usuarios.filter((nome) => nome.startsWith(title) || nome.endsWith(title))
+    
+    let htmlResponse = usersData.map( user => `<strong>${user}</strong> <br/>` ).join("")
+
+    res.send(htmlResponse)
+})
+
 
 app.listen(port, () => {
     console.log(`backend rodando : http://localhost:${port}`)
