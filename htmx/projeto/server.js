@@ -78,6 +78,12 @@ app.get("/detalhes", (req, res) => {
     res.send("rota detalhes chamada")
 })
 
+app.post("/users", (req, res) => {
+    console.log(req.body)
+
+    res.send(`<h2>O usuario ${req.body.nome} tem o cargo: ${req.body.cargo} </h2>`)
+})
+
 app.listen(port, () => {
     console.log(`backend rodando : http://localhost:${port}`)
 })
