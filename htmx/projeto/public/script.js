@@ -46,3 +46,16 @@ document.addEventListener("htmx:responseError", function(event) {
         return div.innerHTML = `<strong style='color: brown;'>${event.detail.xhr.responseText}</strong>`
     }
 })
+
+document.addEventListener("htmx:configRequest", function(event) {
+    console.log(event)
+
+    event.detail.headers["token"] = "eadesrt331fs"
+
+    event.detail.parameters["nome"] = "sujeito programador"
+
+
+    if(event.detail.path === '/detalhes') {
+        alert("chamou a /detalhes")
+    }
+})
