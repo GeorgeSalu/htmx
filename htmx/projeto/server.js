@@ -81,7 +81,11 @@ app.get("/detalhes", (req, res) => {
 app.post("/users", (req, res) => {
     console.log(req.body)
 
-    res.send(`<h2>O usuario ${req.body.nome} tem o cargo: ${req.body.cargo} </h2>`)
+    const nome = req.body.nome;
+    const cargo = req.body.cargo;
+    const idade = req.body.idade;
+
+    res.send(`<h2>O usuario ${nome} tem o cargo: ${cargo} e tem a idade ${idade} </h2>`)
 })
 
 app.listen(port, () => {
