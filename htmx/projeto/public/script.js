@@ -50,8 +50,10 @@ document.addEventListener("htmx:responseError", function(event) {
 document.addEventListener("htmx:configRequest", function(event) {
     console.log(event)
 
+    // incluindo um token na request
     event.detail.headers["token"] = "eadesrt331fs"
 
+    // incluindo um parameter na request
     event.detail.parameters["nome"] = "sujeito programador"
 
 
