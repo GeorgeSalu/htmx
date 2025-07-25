@@ -88,6 +88,15 @@ app.post("/users", (req, res) => {
     res.send(`<h2>O usuario ${nome} tem o cargo: ${cargo} e tem a idade ${idade} </h2>`)
 })
 
+app.put("/users", (req, res) => {
+    console.log(req.body)
+
+    const nome = req.body.nome;
+    const cargo = req.body.cargo;
+
+    res.send(`<h2>O usuario ${nome} tem o cargo: ${cargo}</h2>`)
+})
+
 app.listen(port, () => {
     console.log(`backend rodando : http://localhost:${port}`)
 })

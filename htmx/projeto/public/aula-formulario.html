@@ -18,5 +18,16 @@
 
     <div id="usuarios"></div>
 
+    <br />
+
+    <h2>Aplicando req PUT</h2>
+    <form hx-put="/users" hx-target="#result-put">
+        <input name="nome" type="text" placeholder="Digite o nome" />
+        <input name="cargo" type="text" placeholder="Digite o cargo" />
+        <button type="submit">editar formulario</button>
+    </form>
+
+    <div id="result-put"></div>
+
 </body>
 </html>
