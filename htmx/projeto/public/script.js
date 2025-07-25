@@ -56,7 +56,7 @@ document.addEventListener("htmx:configRequest", function(event) {
     // incluindo um parameter na request
     event.detail.parameters["nome"] = "sujeito programador"
 
-
+    // inteceptando uma requisição especifica
     if(event.detail.path === '/detalhes') {
         alert("chamou a /detalhes")
     }
