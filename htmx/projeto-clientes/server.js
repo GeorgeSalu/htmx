@@ -49,8 +49,6 @@ app.post("/clientes", async (req, res) => {
         console.log(err)
         return res.send(`<div><p>Erro ao registrar esse usuario</p></div>`)
     }
-
-    res.send("funcionando")
 })
 
 sequelize.sync().then(() => {
