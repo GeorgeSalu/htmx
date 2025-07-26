@@ -10,6 +10,10 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
 
+app.get("/teste", (req, res) => {
+    res.send("api funcionando")
+})
+
 app.listen(port, () => {
     console.log(`server online na url http://localhost:${port}`)
 })
