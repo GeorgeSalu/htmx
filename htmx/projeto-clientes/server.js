@@ -51,6 +51,23 @@ app.post("/clientes", async (req, res) => {
     }
 })
 
+app.get("/clientes", async (req, res) => {
+
+    try {
+        
+        const funcionarios = await Customer.findAll();
+
+        console.log(funcionarios);
+        
+        return res.send("ok")
+
+    } catch (error) {
+        console.log(err)
+        return res.send(`<div style='background-color: rgba(255, 102, 102, 0.8); position: absolute; top 24px; right: 24px; padding: 4px 24px; border-radius: 4px'><p>Error ao buscar dados</p></div>`)
+    }
+
+})
+
 sequelize.sync().then(() => {
     app.listen(port, () => {
         console.log(`server online na url http://localhost:${port}`)
