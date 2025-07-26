@@ -68,10 +68,26 @@ app.get("/clientes", async (req, res) => {
     try {
         
         const funcionarios = await Customer.findAll();
+    
+        let html = funcionarios.map((funcionario) => `
+            <div style='background-color: #fafafa; padding: 8px; border-radius: 8px; margin-bottom: 14px; position: relative;'>
+                <strong style='color: #000; font-size: 20px'>${funcionario.nome}<strong>
+                <p style='color: #000'>Email : ${funcionario.email}</p>
+                <p style='color: #000'>Cargo : ${funcionario.cargo}</p>
+                <p style='color: #000'>Status : ${funcionario.status}</p>
 
-        console.log(funcionarios);
+                <div style='position: absolute; top: 14px; right: 14px'>
+                    <button style='background-color: #121212; padding: 0 8px; color: #fff'>
+                        editar
+                    </button>
+                    <button style='background-color: #ef4444; padding: 0 8px; color: #fff'>
+                        deletar
+                    </button>
+                </div>
+            </div>
+        `).join("")
         
-        return res.send("ok")
+        return res.send(html)
 
     } catch (error) {
         console.log(err)
