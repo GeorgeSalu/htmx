@@ -26,6 +26,15 @@ app.get("/teste", (req, res) => {
     res.send("api funcionando")
 })
 
+app.post("/clientes", (req, res) => {
+
+    const { nome, email, cargo, status } = req.body
+
+    console.log(nome, email, cargo, status)
+
+    res.send("funcionando")
+})
+
 sequelize.sync().then(() => {
     app.listen(port, () => {
         console.log(`server online na url http://localhost:${port}`)
