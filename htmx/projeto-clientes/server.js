@@ -31,7 +31,7 @@ app.post("/clientes", async (req, res) => {
     const { nome, email, cargo, status } = req.body
 
     if(!nome || !email) {
-        return res.send(`<div><p>Preencha todos os campos</p></div>`)
+        return res.send(`<div style='background-color: rgba(255, 102, 102, 0.8); position: absolute; top 24px; right: 24px; padding: 4px 24px; border-radius: 4px'><p>Preencha todos os campos</p></div>`)
     }
 
     try {
@@ -43,11 +43,11 @@ app.post("/clientes", async (req, res) => {
             status: status ? true : false
         })
 
-        return res.send(`<div><p>Funcionario cadastrado com sucesso</p></div>`)
+        return res.send(`<div style='background-color: rgba(0, 202, 32, 0.8); position: absolute; top 24px; right: 24px; padding: 4px 24px; border-radius: 4px'><p>Funcionario registrado com sucesso</p></div>`)
 
     }catch(err) {
         console.log(err)
-        return res.send(`<div><p>Erro ao registrar esse usuario</p></div>`)
+        return res.send(`<div style='background-color: rgba(255, 102, 102, 0.8); position: absolute; top 24px; right: 24px; padding: 4px 24px; border-radius: 4px'><p>Error ao cadastrar funcionario</p></div>`)
     }
 })
 
