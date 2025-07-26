@@ -78,7 +78,6 @@ app.get("/clientes", async (req, res) => {
                     "<span style='background-color: #039e00; padding:0px 8px;'>ATIVO</span>" : 
                     "<span style='background-color: #bf0d02; padding:0px 8px;'>INATIVO</span>"}
                 </p>
-
                 <div style='position: absolute; top: 14px; right: 14px'>
                     <button style='background-color: #121212; padding: 0 8px; color: #fff'>
                         editar
