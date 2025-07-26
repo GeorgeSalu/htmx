@@ -8,9 +8,43 @@
     <link rel="stylesheet" href="output.css">
     <title>Projeto funcionarios</title>
 </head>
-<body>
-    <h1 class="text-4xl font-bold">Meus funcionarios</h1>
+<body class="bg-zinc-900">
+    
+    <div class="w-full mx-auto px-2 max-w-7xl">
+        <h1 class="text-4xl font-bold text-white text-center mt-14 mb-4">
+            Funcionarios
+        </h1>
 
-    <button hx-get="/teste">teste</button>
+        <form class="bg-slate-100 w-full max-w-3xl mx-auto p-4 rounded flex-col justify-center items-center gap-4">
+            <div class="w-full">
+                <label class="font-bold text-lg">Nome completo</label>
+                <input type="text" name="nome" placeholder="Digite o nome do cliente" class="w-full p-2 rounded bg-white my-1" />
+            </div>
+            <div class="w-full">
+                <label class="font-bold text-lg">Email</label>
+                <input type="email" name="email" placeholder="Digite o seu email" class="w-full p-2 rounded bg-white my-1" />
+            </div>
+            <div class="w-full">
+                <label class="font-bold text-lg">Cargo</label>
+                <select name="cargo" id="cargo" class="w-full p-2 rounded bg-white my-1">
+                    <option value="frontend">frontend</option>
+                    <option value="backend">backend</option>
+                    <option value="mobile">mobile</option>
+                    <option value="fullstack">fullstack</option>
+                    <option value="rh">rh</option>
+                </select>
+            </div>
+            <div class="w-full">
+                <label class="font-bold text-lg mr-2">Status</label>
+                <input type="checkbox" name="status" />
+            </div>
+
+            <button type="submit" class="bg-blue-500 w-full rounded p-2 font-medium text-white">
+                Salvar
+            </button>
+        </form>
+    </div>
+
+
 </body>
 </html>
