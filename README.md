@@ -6,3 +6,4 @@
 - Requisições com HTMX;
 - Interceptando erros;
 - Interceptando requisições;
+- Projetos práticos com htmx;
