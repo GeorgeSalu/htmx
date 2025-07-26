@@ -26,11 +26,29 @@ app.get("/teste", (req, res) => {
     res.send("api funcionando")
 })
 
-app.post("/clientes", (req, res) => {
+app.post("/clientes", async (req, res) => {
 
     const { nome, email, cargo, status } = req.body
 
-    console.log(nome, email, cargo, status)
+    if(!nome || !email) {
+        return res.send(`<div><p>Preencha todos os campos</p></div>`)
+    }
+
+    try {
+
+        const funcionario = await Customer.create({
+            nome,
+            email,
+            cargo,
+            status: status ? true : false
+        })
+
+        return res.send(`<div><p>Funcionario cadastrado com sucesso</p></div>`)
+
+    }catch(err) {
+        console.log(err)
+        return res.send(`<div><p>Erro ao registrar esse usuario</p></div>`)
+    }
 
     res.send("funcionando")
 })

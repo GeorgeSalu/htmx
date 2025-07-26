@@ -18,7 +18,8 @@
             Funcionarios
         </h1>
 
-        <form class="bg-slate-100 w-full max-w-3xl mx-auto p-4 rounded flex-col justify-center items-center gap-4">
+        <form id="form-clientes" class="bg-slate-100 w-full max-w-3xl mx-auto p-4 rounded flex-col justify-center items-center gap-4"
+            hx-post="/clientes" hx-target="#toast">
             <div class="w-full">
                 <label class="font-bold text-lg">Nome completo</label>
                 <input type="text" name="nome" placeholder="Digite o nome do cliente" class="w-full p-2 rounded bg-white my-1" />
