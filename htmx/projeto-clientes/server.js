@@ -74,7 +74,9 @@ app.get("/clientes", async (req, res) => {
                 <strong style='color: #000; font-size: 20px'>${funcionario.nome}<strong>
                 <p style='color: #000'>Email : ${funcionario.email}</p>
                 <p style='color: #000'>Cargo : ${funcionario.cargo}</p>
-                <p style='color: #000'>Status : ${funcionario.status}</p>
+                <p style='color: #000'>Status : ${funcionario.status ? 
+                    "<span style='background-color: #039e00; padding:0px 8px;'>ATIVO</span>" : 
+                    "<span style='background-color: #bf0d02; padding:0px 8px;'>INATIVO</span>"}</p>
 
                 <div style='position: absolute; top: 14px; right: 14px'>
                     <button style='background-color: #121212; padding: 0 8px; color: #fff'>
