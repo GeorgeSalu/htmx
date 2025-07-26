@@ -2,6 +2,7 @@ document.addEventListener("htmx:afterRequest", async function(event) {
 
     if(event.target.getAttribute("id") === 'form-clientes') {
         await fetchClientes();
+        document.querySelector("#form-clientes").reset();
     }
 
 })
