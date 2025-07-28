@@ -12,7 +12,8 @@ async function fetchClientes() {
 }
 
 async function handleDelete(id) {
-    await htmx.ajax("DELETE", `http://localhost:3333/clientes/${id}`, "#toast")
+    await htmx.ajax("DELETE", `http://localhost:3333/clientes/${id}`, { swap: "none" })
+    await fetchClientes();
 }
 
 
