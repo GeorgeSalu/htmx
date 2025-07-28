@@ -82,7 +82,8 @@ app.get("/clientes", async (req, res) => {
                     <button style='background-color: #121212; padding: 0 8px; color: #fff'>
                         editar
                     </button>
-                    <button style='background-color: #ef4444; padding: 0 8px; color: #fff'>
+                    <button style='background-color: #ef4444; padding: 0 8px; color: #fff' 
+                            onclick='handleDelete(${funcionario.id})'>
                         deletar
                     </button>
                 </div>
@@ -97,6 +98,49 @@ app.get("/clientes", async (req, res) => {
             <div style='background-color: rgba(255, 102, 102, 0.8); position: absolute; top 24px; right: 24px; padding: 4px 24px; border-radius: 4px'>
                 <p>Error ao buscar dados</p>
             </div>
+        `)
+    }
+
+})
+
+app.delete("/clientes/:id", async (req, res) => {
+
+    const id = req.params.id
+
+    if(!id) {
+        return res.status(400).send(`
+            <div style='background-color: rgba(255, 102, 102, 0.8); position: absolute; top 24px; right: 24px; padding: 4px 24px; border-radius: 4px'>
+                <p>Error ao buscar dados</p>
+            </div>    
+        `)
+    }
+
+    try {
+
+        const funcionario = await Customer.findByPk(id);
+
+        if(!funcionario) {
+            return res.status(400).send(`
+                <div style='background-color: rgba(255, 102, 102, 0.8); position: absolute; top 24px; right: 24px; padding: 4px 24px; border-radius: 4px'>
+                    <p>Error ao buscar dados</p>
+                </div>    
+            `)
+        }
+
+        await funcionario.destroy()
+
+        return res.send(`
+            <div style='background-color: rgba(0, 202, 32, 0.8); position: absolute; top 24px; right: 24px; padding: 4px 24px; border-radius: 4px'>
+                <p>Funcionario deletado com sucesso</p>
+            </div>
+        `)
+        
+    } catch (error) {
+        console.log(error)
+        return res.status(400).send(`
+            <div style='background-color: rgba(255, 102, 102, 0.8); position: absolute; top 24px; right: 24px; padding: 4px 24px; border-radius: 4px'>
+                <p>Error ao buscar dados</p>
+            </div>    
         `)
     }
 

@@ -11,6 +11,10 @@ async function fetchClientes() {
     await htmx.ajax("GET", "http://localhost:3333/clientes", "#lista-clientes")
 }
 
+async function handleDelete(id) {
+    await htmx.ajax("DELETE", `http://localhost:3333/clientes/${id}`, "#toast")
+}
+
 
 document.addEventListener("htmx:configRequest", function(event) {
 
