@@ -194,6 +194,92 @@ app.put("/clientes", async (req, res) => {
     
 })
 
+app.get("/search", async (req, res) => {
+
+    const nome = req.query.search;
+
+    if(!nome || nome === '') {
+        const funcionarios = await Customer.findAll();
+    
+        let html = funcionarios.map((funcionario) => `
+            <div style='background-color: #fafafa; padding: 8px; border-radius: 8px; margin-bottom: 14px; position: relative;'>
+                <strong style='color: #000; font-size: 20px'>${funcionario.nome}<strong>
+                <p style='color: #000'>Email : ${funcionario.email}</p>
+                <p style='color: #000'>Cargo : ${funcionario.cargo}</p>
+                <p style='color: #000'>Status : ${funcionario.status ? 
+                    "<span style='background-color: #039e00; padding:0px 8px;'>ATIVO</span>" : 
+                    "<span style='background-color: #bf0d02; padding:0px 8px;'>INATIVO</span>"}
+                </p>
+                <div style='position: absolute; top: 14px; right: 14px'>
+                    <button style='background-color: #121212; padding: 0 8px; color: #fff'
+                            onclick="handleEdit(${funcionario.id}, '${funcionario.nome}', '${funcionario.email}', '${funcionario.cargo}', '${funcionario.status}')">
+                        editar
+                    </button>
+                    <button style='background-color: #ef4444; padding: 0 8px; color: #fff' 
+                            onclick='handleDelete(${funcionario.id})'>
+                        deletar
+                    </button>
+                </div>
+            </div>
+        `).join("")
+        
+        return res.send(html)
+    }
+
+    try {
+        
+
+        const funcionarios = await Customer.findAll({
+            where: {
+                nome: {
+                    [Sequelize.Op.like]: `%${nome}%`
+                }
+            }
+        })
+
+        if(funcionarios.length === 0) {
+            return res.send(`
+                <div style='background-color: rgba(255, 102, 102, 0.8); position: absolute; top 24px; right: 24px; padding: 4px 24px; border-radius: 4px'>
+                    <p>este nome não existe no banco de dados</p>
+                </div>    
+            `)
+        }
+
+        let html = funcionarios.map((funcionario) => `
+            <div style='background-color: #fafafa; padding: 8px; border-radius: 8px; margin-bottom: 14px; position: relative;'>
+                <strong style='color: #000; font-size: 20px'>${funcionario.nome}<strong>
+                <p style='color: #000'>Email : ${funcionario.email}</p>
+                <p style='color: #000'>Cargo : ${funcionario.cargo}</p>
+                <p style='color: #000'>Status : ${funcionario.status ? 
+                    "<span style='background-color: #039e00; padding:0px 8px;'>ATIVO</span>" : 
+                    "<span style='background-color: #bf0d02; padding:0px 8px;'>INATIVO</span>"}
+                </p>
+                <div style='position: absolute; top: 14px; right: 14px'>
+                    <button style='background-color: #121212; padding: 0 8px; color: #fff'
+                            onclick="handleEdit(${funcionario.id}, '${funcionario.nome}', '${funcionario.email}', '${funcionario.cargo}', '${funcionario.status}')">
+                        editar
+                    </button>
+                    <button style='background-color: #ef4444; padding: 0 8px; color: #fff' 
+                            onclick='handleDelete(${funcionario.id})'>
+                        deletar
+                    </button>
+                </div>
+            </div>
+        `).join("")
+        
+        return res.send(html)
+
+
+    } catch (error) {
+        return res.send(`
+            <div style='background-color: rgba(255, 102, 102, 0.8); position: absolute; top 24px; right: 24px; padding: 4px 24px; border-radius: 4px'>
+                <p>Error ao buscar esse nome</p>
+            </div>    
+        `)
+    }
+
+})
+
 sequelize.sync().then(() => {
     app.listen(port, () => {
         console.log(`server online na url http://localhost:${port}`)
