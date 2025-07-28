@@ -80,7 +80,7 @@ app.get("/clientes", async (req, res) => {
                 </p>
                 <div style='position: absolute; top: 14px; right: 14px'>
                     <button style='background-color: #121212; padding: 0 8px; color: #fff'
-                            onclick='handleEdit(${funcionario.id}, '${funcionario.nome}', '${funcionario.email}', '${funcionario.cargo}', '${funcionario.status}')'>
+                            onclick="handleEdit(${funcionario.id}, '${funcionario.nome}', '${funcionario.email}', '${funcionario.cargo}', '${funcionario.status}')">
                         editar
                     </button>
                     <button style='background-color: #ef4444; padding: 0 8px; color: #fff' 
@@ -145,6 +145,15 @@ app.delete("/clientes/:id", async (req, res) => {
         `)
     }
 
+})
+
+app.put("/clientes", async (req, res) => {
+    const { id, nome, email, cargo, status } = req.body
+
+
+    console.log(body)
+
+    res.send("ok")
 })
 
 sequelize.sync().then(() => {
