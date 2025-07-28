@@ -151,7 +151,7 @@ app.put("/clientes", async (req, res) => {
     const { id, nome, email, cargo, status } = req.body
 
 
-    console.log(body)
+    console.log(req.body)
 
     res.send("ok")
 })

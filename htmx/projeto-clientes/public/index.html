@@ -50,7 +50,8 @@
         </form>
 
         <!-- formulario para editar -->
-        <form id="form-edit-clientes" class="bg-slate-100 w-full max-w-3xl mx-auto p-4 rounded flex-col justify-center items-center gap-4 hidden">
+        <form id="form-edit-clientes" class="bg-slate-100 w-full max-w-3xl mx-auto p-4 rounded flex-col justify-center items-center gap-4 hidden"
+            hx-put="/clientes" hx-target="#toast">
 
             <input type="hidden" name="id" id="id-cliente" />
 
