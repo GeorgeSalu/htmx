@@ -150,10 +150,48 @@ app.delete("/clientes/:id", async (req, res) => {
 app.put("/clientes", async (req, res) => {
     const { id, nome, email, cargo, status } = req.body
 
+    if(!id || !nome || !email) {
+        return res.send(`
+            <div style='background-color: rgba(255, 102, 102, 0.8); position: absolute; top 24px; right: 24px; padding: 4px 24px; border-radius: 4px'>
+                <p>Error ao salvar alteraões</p>
+            </div>    
+        `)
+    }
 
-    console.log(req.body)
+    
+    try {
 
-    res.send("ok")
+        const funconario = await Customer.findByPk(id)
+
+        if(!funconario) {
+            return res.status(400).send(`
+                <div style='background-color: rgba(255, 102, 102, 0.8); position: absolute; top 24px; right: 24px; padding: 4px 24px; border-radius: 4px'>
+                    <p>Error salvar alterações</p>
+                </div>    
+            `)
+        }
+
+        await funconario.update({
+            nome,
+            email,
+            cargo,
+            status: status ? true : false
+        })
+
+        return res.send(`
+            <div style='background-color: rgba(0, 202, 32, 0.8); position: absolute; top 24px; right: 24px; padding: 4px 24px; border-radius: 4px'>
+                <p>Funcionario alterado com sucesso</p>
+            </div>
+        `)
+        
+    } catch (error) {
+        return res.status(400).send(`
+            <div style='background-color: rgba(255, 102, 102, 0.8); position: absolute; top 24px; right: 24px; padding: 4px 24px; border-radius: 4px'>
+                <p>Error ao salvar alterações</p>
+            </div>    
+        `)
+    }
+    
 })
 
 sequelize.sync().then(() => {

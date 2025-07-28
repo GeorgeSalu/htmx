@@ -5,6 +5,11 @@ document.addEventListener("htmx:afterRequest", async function(event) {
         document.querySelector("#form-clientes").reset();
     }
 
+    if(event.target.getAttribute("id") === 'form-edit-clientes') {
+        await fetchClientes();
+        handleCancelEdit();
+    }
+
 })
 
 async function fetchClientes() {
