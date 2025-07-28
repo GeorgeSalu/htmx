@@ -79,7 +79,8 @@ app.get("/clientes", async (req, res) => {
                     "<span style='background-color: #bf0d02; padding:0px 8px;'>INATIVO</span>"}
                 </p>
                 <div style='position: absolute; top: 14px; right: 14px'>
-                    <button style='background-color: #121212; padding: 0 8px; color: #fff'>
+                    <button style='background-color: #121212; padding: 0 8px; color: #fff'
+                            onclick='handleEdit(${funcionario.id}, '${funcionario.nome}', '${funcionario.email}', '${funcionario.cargo}', '${funcionario.status}')'>
                         editar
                     </button>
                     <button style='background-color: #ef4444; padding: 0 8px; color: #fff' 
