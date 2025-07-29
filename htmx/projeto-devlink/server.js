@@ -13,6 +13,10 @@ app.use(cookieParser());
 
 app.set("view engine","ejs")
 
+app.get("/teste", (req, res) => {
+    res.send("ok")
+})
+
 app.get("/", (req, res) => {
     res.render("layout", {title: "devlinks - meus links", template: "index"})
 })
