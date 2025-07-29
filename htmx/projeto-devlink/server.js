@@ -11,8 +11,10 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.json());
 app.use(cookieParser());
 
-app.get("/teste", (req, res) => {
-    res.send("ok")
+app.set("view engine","ejs")
+
+app.get("/", (req, res) => {
+    res.render("layout", {title: "devlinks - meus links", template: "index"})
 })
 
 app.listen(port, () => {
