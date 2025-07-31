@@ -36,7 +36,7 @@ router.post("/register", async (req, res) => {
         
     } catch (error) {
         console.log(error)
-        return res.status(400).send("erro ao registrar usuario")
+        return res.status(400).send("Erro ao cadastrar novo usuario")
     }
 
 })
