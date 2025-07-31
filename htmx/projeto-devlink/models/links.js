@@ -18,8 +18,11 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING,
     url: DataTypes.STRING,
     userId: {
-      model: "Users",
-      key: "id"
+      type: DataTypes.INTEGER,
+      references: {
+        model: "Users",
+        key: "id"
+      }
     }
   }, {
     sequelize,
