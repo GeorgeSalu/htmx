@@ -30,10 +30,20 @@ router.post("/register", async (req, res) => {
             password: hash
         })
 
-        console.log(user);
+        // assinar e gerar o token jwt
+        const payload = { id: user.id, username: user.name }
+        const token = jwt.sign(payload, "102030", {expiresIn: "30d"})
+        console.log(token);
 
-        res.send("user criado")
+        req.userId = user.id
+
+        // criar um cookie
+        const expirationData = new Date();
+        expirationData.setDate(expirationData.getDate() + 30);
+        res.cookie("auth_token", token, { expires: expirationData })
         
+        res.send("ok")
+
     } catch (error) {
         console.log(error)
         return res.status(400).send("Erro ao cadastrar novo usuario")
