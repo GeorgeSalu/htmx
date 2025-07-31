@@ -2,6 +2,8 @@ const express = require("express")
 const cors = require("cors")
 const cookieParser = require("cookie-parser")
 
+const authRoutes = require("./routes/authetication")
+
 const app = express()
 const port = 3333;
 
@@ -12,6 +14,8 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.set("view engine","ejs")
+
+app.use(authRoutes)
 
 
 app.get("/", (req, res) => {
