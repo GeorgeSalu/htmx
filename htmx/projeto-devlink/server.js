@@ -20,7 +20,7 @@ app.use(authRoutes)
 app.use(dashboardRoutes)
 
 app.get("/", (req, res) => {
-    res.render("layout", {title: "Devlinks - meus links", template: "index"})
+    res.render("layout", {title: "DevLinks - meus links", template: "index"})
 })
 
 app.listen(port, () => {

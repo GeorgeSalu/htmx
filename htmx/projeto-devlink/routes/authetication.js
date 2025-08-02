@@ -6,11 +6,11 @@ const jwt = require("jsonwebtoken")
 const router = express.Router();
 
 router.get("/login", (req, res) => {
-    res.render("layout", { title: "Login - Devlinks", template: "login" })
+    res.render("layout", { title: "Login - DevLinks", template: "login" })
 })
 
 router.get("/register", (req, res) => {
-    res.render("layout", { title: "Pagina novo usuario - Devlinks", template: "register" })
+    res.render("layout", { title: "Pagina novo usuario - DevLinks", template: "register" })
 })
 
 router.post("/register", async (req, res) => {
