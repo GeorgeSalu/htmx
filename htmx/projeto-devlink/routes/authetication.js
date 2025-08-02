@@ -42,7 +42,9 @@ router.post("/register", async (req, res) => {
         expirationData.setDate(expirationData.getDate() + 30);
         res.cookie("auth_token", token, { expires: expirationData })
         
-        res.send("ok")
+        res.setHeader("HX-Redirect", "/dashboard")
+
+        res.send("Usuario criado com sucesso")
 
     } catch (error) {
         console.log(error)
