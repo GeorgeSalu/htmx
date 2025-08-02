@@ -1,9 +1,9 @@
 ## htmx
 
-- Conceitos fundamentais;
+- Conceitos fundamentais htmx;
 - Tipos de carregamento com HTMX;
 - Eventos com HTMX;
 - Requisições com HTMX;
-- Interceptando erros;
+- Interceptando e tratando erros;
 - Interceptando requisições;
-- Projetos práticos com htmx;
+- Projetos práticos com htmx e javascript vanila;
