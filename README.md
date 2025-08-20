@@ -6,5 +6,5 @@
 - Requisições com htmx;
 - Interceptando e tratando erros;
 - Interceptando requisições;
-- Projetos práticos com htmx e javascript vanila;
+- Projetos práticos com htmx e JavaScript vanila;
 - NodeJs
