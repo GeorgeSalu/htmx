@@ -1,11 +1,13 @@
 ## htmx
 
-- Conceitos fundamentais htmx;
-- Tipos de carregamento com htmx;
-- Eventos com htmx;
-- Requisições com htmx;
-- Interceptando e tratando erros;
-- Interceptando requisições;
-- Projetos práticos com htmx e JavaScript vanila;
-- Integração com backend
-- NodeJs
+- Conceitos fundamentais htmx.
+- Tipos de carregamento com htmx.
+- Eventos com htmx.
+- Requisições com htmx.
+- Interceptando e tratando erros.
+- Interceptando requisições.
+- Projetos práticos com htmx e JavaScript vanila.
+- Integração com backend.
+- Autenticação com token JWT.
+- Integração com TailwindCSS.
+- NodeJs.
