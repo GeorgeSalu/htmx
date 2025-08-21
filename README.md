@@ -1,6 +1,6 @@
 ## htmx
 
-você vai aprender a dominar essa tecnologia, desde os fundamentos básicos até a integração com tecnologias avançadas para o desenvolvimento de projetos web completos
+Você vai aprender a dominar htmx, desde os fundamentos básicos até a integração com tecnologias avançadas para o desenvolvimento de projetos web completos
 
 - Conceitos fundamentais htmx.
 - Tipos de carregamento com htmx.
