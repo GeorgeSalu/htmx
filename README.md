@@ -7,4 +7,5 @@
 - Interceptando e tratando erros;
 - Interceptando requisições;
 - Projetos práticos com htmx e JavaScript vanila;
+- Integração com backend
 - NodeJs
