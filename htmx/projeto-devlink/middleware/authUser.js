@@ -20,8 +20,6 @@ function autheticationToken(req, res, next) {
         next()
     })
 
-    console.log(token)
-
 }
 
 module.exports = autheticationToken
