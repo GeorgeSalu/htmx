@@ -8,9 +8,20 @@ function autheticationToken(req, res, next) {
         return res.redirect("/")
     }
 
+
+    jwt.verify(token, "102030", (err, user) => {
+        if(err) {
+            res.setHeader("Set-Cookie","auth_token=; Path=/; Expires=0")
+            res.setHeader("HX-Redirect", "/")
+            return res.redirect("/")
+        }
+
+        req.userId = user.id
+        next()
+    })
+
     console.log(token)
 
-    next()
 }
 
 module.exports = autheticationToken
