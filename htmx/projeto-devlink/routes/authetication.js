@@ -45,7 +45,7 @@ router.post("/register", async (req, res) => {
         // header htmx redirecionamento
         res.setHeader("HX-Redirect", "/dashboard")
 
-        res.send("Usuario criado com sucesso")
+        res.send("Usuário criado com sucesso")
 
     } catch (error) {
         console.log(error)
