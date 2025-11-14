@@ -8,8 +8,8 @@ function autheticationToken(req, res, next) {
         return res.redirect("/")
     }
 
-    const secretTokenJwt = "102030"
-    jwt.verify(token, secretTokenJwt, (err, user) => {
+    const secretOrPublicKey = "102030"
+    jwt.verify(token, secretOrPublicKey, (err, user) => {
         if(err) {
             res.setHeader("Set-Cookie","auth_token=; Path=/; Expires=0")
             res.setHeader("HX-Redirect", "/")

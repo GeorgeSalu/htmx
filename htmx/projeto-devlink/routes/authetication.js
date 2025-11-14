@@ -32,8 +32,8 @@ router.post("/register", async (req, res) => {
 
         // assinar e gerar o token jwt
         const payload = { id: user.id, username: user.name }
-        const secretTokenJwt = "102030"
-        const token = jwt.sign(payload, secretTokenJwt, {expiresIn: "30d"})
+        const secretOrPublicKey = "102030"
+        const token = jwt.sign(payload, secretOrPublicKey, {expiresIn: "30d"})
         console.log(token);
 
         req.userId = user.id
