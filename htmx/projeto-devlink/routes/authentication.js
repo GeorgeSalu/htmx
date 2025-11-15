@@ -10,7 +10,7 @@ router.get("/login", (req, res) => {
 })
 
 router.get("/register", (req, res) => {
-    res.render("layout", { title: "Pagina novo usuario - DevLinks", template: "register" })
+    res.render("layout", { title: "Pagina novo usuário - DevLinks", template: "register" })
 })
 
 router.post("/register", async (req, res) => {
