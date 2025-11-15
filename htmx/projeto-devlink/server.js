@@ -2,7 +2,7 @@ const express = require("express")
 const cors = require("cors")
 const cookieParser = require("cookie-parser")
 
-const authRoutes = require("./routes/authetication")
+const authRoutes = require("./routes/authentication")
 const dashboardRoutes = require("./routes/dashboard")
 
 const app = express()
