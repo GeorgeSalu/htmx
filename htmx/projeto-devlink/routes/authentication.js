@@ -14,7 +14,7 @@ router.post("/login", async (req, res) => {
     const {email, password} = req.body
 
     if(!email || !password) {
-        return res.status(400).send("Preencha todos os campos")
+        return res.status(400).send("Preencha todos os campos!")
     }
 
     try {
@@ -48,7 +48,7 @@ router.post("/register", async (req, res) => {
     const {name, email, password} = req.body
 
     if(!name || !email || !password) {
-        return res.status(400).send("Preencha todos os campos")
+        return res.status(400).send("Preencha todos os campos!")
     }
 
     const hash = await bcrypt.hash(password, 10)
