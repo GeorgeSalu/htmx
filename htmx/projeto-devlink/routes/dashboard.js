@@ -20,11 +20,12 @@ router.post("/create-link", authenticationToken, async  (req, res) => {
             userId
         })
 
+        res.send("cadastrado")
+
     }catch(err) {
         return res.status(400).send("Erro ao registrar o link")
     }
 
-    res.send("ok")
 })
 
 module.exports = router;
