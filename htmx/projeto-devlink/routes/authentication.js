@@ -1,12 +1,43 @@
 const express = require("express")
 const bcrypt = require("bcrypt")
 const { User } = require("../models")
-const jwt = require("jsonwebtoken")
+const jwt = require("jsonwebtoken");
+const { where } = require("sequelize");
 
 const router = express.Router();
 
 router.get("/login", (req, res) => {
     res.render("layout", { title: "Login - DevLinks", template: "login" })
+})
+
+router.post("/login", async (req, res) => {
+    const {email, password} = req.body
+
+    if(!email || !password) {
+        return res.status(400).send("Preencha todos os campos")
+    }
+
+    try {
+
+        const user = await User.findOne({ where: {email} })
+
+        if(!user) {
+            return res.status(401).send("Senha/Usuario incorretos")
+        }
+        
+        // verifica a senha
+        const passwordTest = await bcrypt.compare(password, user.password)
+
+        if(!passwordTest) {
+            return res.status(401).send("Senha/Usuario incorretos")
+        } 
+
+        
+
+    }catch(err) {
+        console.log(err)
+        return res.status(401).send("Erro ao efetuar login")
+    }
 })
 
 router.get("/register", (req, res) => {
