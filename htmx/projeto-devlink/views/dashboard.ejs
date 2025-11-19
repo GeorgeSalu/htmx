@@ -9,27 +9,24 @@
         </a>
     </div>
 
-    <button
-        type="button"
-        class="absolute top-5 right-4 bg-red-500 text-white rounded px-4 py-1 z-0"
-        hx-get="/logout">
+    <button type="button" class="absolute top-5 right-4 bg-red-500 text-white rounded px-4 py-1 z-0" hx-get="/logout">
         Sair
     </button>
 
     <form class="flex flex-col max-w-2xl mx-auto gap-4">
         <div class="w-full">
             <label>Nome do link</label>
-            <input type="text" name="name" placeholder="ex: canal do youtube" class="w-full p-2 rounded text-black my-1" />
+            <input type="text" name="name" placeholder="ex: canal do youtube"
+                class="w-full p-2 rounded text-black my-1" />
         </div>
 
         <div class="w-full">
             <label>Url do link</label>
-            <input type="text" name="url" placeholder="ex: http://youtube.com" class="w-full p-2 rounded text-black my-1" />
+            <input type="text" name="url" placeholder="ex: http://youtube.com"
+                class="w-full p-2 rounded text-black my-1" />
         </div>
 
-        <button 
-            class="bg-blue-500 w-full p-2 rounded mt-4 font-bold"
-            type="submit">
+        <button class="bg-blue-500 w-full p-2 rounded mt-4 font-bold" type="submit">
             Cadastrar link
         </button>
     </form>
