@@ -39,7 +39,7 @@ router.post("/login", async (req, res) => {
 
         req.userId = user.id
         
-// criar um cookie
+        // criar um cookie
         const expirationData = new Date();
         expirationData.setDate(expirationData.getDate() + 30);
         res.cookie("auth_token", token, { expires: expirationData })
