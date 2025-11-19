@@ -45,7 +45,7 @@ router.get("/dashboard/links", authenticationToken, async (req, res) => {
 
     }catch(err) {
         console.log(err)
-        return res.status(400).send("falha")
+        return res.status(400).send("falha ao buscar os links")
     }
 })
 
