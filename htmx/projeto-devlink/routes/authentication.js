@@ -32,8 +32,21 @@ router.post("/login", async (req, res) => {
             return res.status(401).send("Senha/Usuario incorretos")
         } 
 
+        // gerar e assinar token
+        const payload = { id: user.id, username: user.name }
+        const token = jwt.sign(payload, "102030", { expiresIn: "30d" })
         
 
+        req.userId = user.id
+        
+// criar um cookie
+        const expirationData = new Date();
+        expirationData.setDate(expirationData.getDate() + 30);
+        res.cookie("auth_token", token, { expires: expirationData })
+
+        res.setHeader("HX-Redirect", "/dashboard")
+
+        return res.send("Usuario cadastrado")
     }catch(err) {
         console.log(err)
         return res.status(401).send("Erro ao efetuar login")
