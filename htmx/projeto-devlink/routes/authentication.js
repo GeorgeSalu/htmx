@@ -99,4 +99,10 @@ router.post("/register", async (req, res) => {
 
 })
 
+router.get("/logout", (req, res) => {
+    res.setHeader("Set-Cookie","auth_token=; Path=/; Expires=0")
+    res.setHeader("HX-Redirect", "/")
+    res.send("ok")
+})
+
 module.exports = router
