@@ -13,6 +13,10 @@ router.post("/create-link", authenticationToken, async  (req, res) => {
     const { name, url } = req.body
     const userId = req.userId
 
+    if (!name || !url || !userId) {
+        return res.status(400).send("Erro ao registrar o link")
+    }
+
     try {
 
         const link = await Links.create({
