@@ -44,6 +44,12 @@ router.get("/dashboard/links", authenticationToken, async (req, res) => {
         let html = links.map((link) => `
             <div class='bg-white flex items-center justify-between w-full rounded p-2 mt-4'>
                 <p class='text-lg text-black w-full'>${link.name}</p>
+
+                <div>
+                    <button class='bg-red-500 text-white px-2' onclick='handleDeleteLink(${link.id})'>
+                        Deletar
+                    </button>
+                </div>
             </div>
         `).join("")
         
