@@ -13,11 +13,11 @@ document.body.addEventListener("htmx:afterRequest", async function(event) {
     
     if (event.target.getAttribute("id") === 'form-links') {
         document.querySelector("#form-links").reset()
-        await fechLinks()
+        await fetchLinks()
     }
 
 })
 
-async function fechLinks() {
+async function fetchLinks() {
     await htmx.ajax("GET", "http://localhost:3333/dashboard/links", "#list-links")
 }
