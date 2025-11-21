@@ -18,6 +18,7 @@ document.body.addEventListener("htmx:afterRequest", async function(event) {
 
 })
 
+
 async function fetchLinks() {
     await htmx.ajax("GET", "http://localhost:3333/dashboard/links", "#list-links")
 }
