@@ -8,3 +8,16 @@ document.body.addEventListener("htmx:afterRequest", function(event) {
     }
 
 })
+
+document.body.addEventListener("htmx:afterRequest", async function(event) {
+    
+    if (event.target.getAttribute("id") === 'form-links') {
+        document.querySelector("#form-links").reset()
+        await fechLinks()
+    }
+
+})
+
+async function fechLinks() {
+    await htmx.ajax("GET", "http://localhost:3333/dashboard/links", "#list-links")
+}
