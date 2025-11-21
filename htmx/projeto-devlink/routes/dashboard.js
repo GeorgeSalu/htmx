@@ -74,7 +74,7 @@ router.delete("/delete-link/:id", authenticationToken, async (req, res) => {
         const link = await Links.findByPk(id);
 
         if(!link) {
-            return res.status(400).send("Link nao encontrado")
+            return res.status(404).send("Link nao encontrado")
         }
 
         await link.destroy();
