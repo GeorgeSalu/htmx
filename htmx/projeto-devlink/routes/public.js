@@ -20,7 +20,7 @@ router.get("/links", async (req, res) => {
 
     }catch(err) {
         console.log(err)
-        res.status(400).send("Erro ao localizar seus links")
+        res.status(400).send("Erro os links cadastrados na aplicação")
     }
     
 })
