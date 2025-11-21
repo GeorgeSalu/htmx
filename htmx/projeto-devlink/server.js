@@ -4,7 +4,7 @@ const cookieParser = require("cookie-parser")
 
 const authRoutes = require("./routes/authentication")
 const dashboardRoutes = require("./routes/dashboard")
-const public = require("./routes/public")
+const publicRoutes = require("./routes/public")
 
 const app = express()
 const port = 3333;
@@ -17,7 +17,7 @@ app.use(cookieParser());
 
 app.set("view engine","ejs")
 
-app.use(public)
+app.use(publicRoutes)
 app.use(authRoutes)
 app.use(dashboardRoutes)
 
