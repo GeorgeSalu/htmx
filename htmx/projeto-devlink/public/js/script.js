@@ -21,3 +21,8 @@ document.body.addEventListener("htmx:afterRequest", async function(event) {
 async function fetchLinks() {
     await htmx.ajax("GET", "http://localhost:3333/dashboard/links", "#list-links")
 }
+
+async function handleDeleteLink(id) {
+    await htmx.ajax("DELETE", `http://localhost:3333/delete-link/${id}`, { swap: "none" })
+    await fetchLinks()
+}

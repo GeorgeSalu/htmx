@@ -61,4 +61,30 @@ router.get("/dashboard/links", authenticationToken, async (req, res) => {
     }
 })
 
+router.delete("/delete-link/:id", authenticationToken, async (req, res) => {
+    const userId = req.userId;
+    const id = req.params.id;
+
+    if(!userId || !id) {
+        return res.status(400).send("Erro ao deletar links")
+    }
+
+    try {
+
+        const link = await Links.findByPk(id);
+
+        if(!link) {
+            return res.status(400).send("Link nao encontrado")
+        }
+
+        await link.destroy();
+
+        return res.send("")
+
+    }catch(err) {
+        console.log(err)
+        return res.status(400).send("Falha ao deletar links")
+    }
+})
+
 module.exports = router;
