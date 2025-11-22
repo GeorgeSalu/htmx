@@ -58,10 +58,18 @@ router.get("/register", (req, res) => {
 })
 
 router.post("/register", async (req, res) => {
-    const {name, email, password} = req.body
+    const {name, username, email, password} = req.body
 
-    if(!name || !email || !password) {
+    if(!name || !email || !password || !username) {
         return res.status(400).send("Preencha todos os campos!")
+    }
+
+    const newUsername = username.trim()
+
+    const findUser = await User.findOne({ where: { username: newUsername } })
+
+    if (findUser) {
+        return res.status(400).send("Esse username ja existe!")
     }
 
     const hash = await bcrypt.hash(password, 10)
@@ -70,6 +78,7 @@ router.post("/register", async (req, res) => {
 
         const user = await User.create({
             name,
+            username: newUsername,
             email,
             password: hash
         })
