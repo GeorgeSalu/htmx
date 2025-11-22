@@ -64,9 +64,9 @@ router.post("/register", async (req, res) => {
         return res.status(400).send("Preencha todos os campos!")
     }
 
-    const newUsername = username.trim()
+    const newUserName = username.trim()
 
-    const findUser = await User.findOne({ where: { username: newUsername } })
+    const findUser = await User.findOne({ where: { username: newUserName } })
 
     if (findUser) {
         return res.status(400).send("Esse username ja existe!")
@@ -78,7 +78,7 @@ router.post("/register", async (req, res) => {
 
         const user = await User.create({
             name,
-            username: newUsername,
+            username: newUserName,
             email,
             password: hash
         })
