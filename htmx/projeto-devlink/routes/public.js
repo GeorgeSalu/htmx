@@ -1,5 +1,5 @@
 const express = require('express')
-const { Links } = require("../models");
+const { Links, User } = require("../models");
 
 const router = express.Router();
 
@@ -12,11 +12,24 @@ router.get("/links/:username", (req, res) => {
 router.get("/list-links", async (req, res) => {
     
     const username = req.query.username
-    console.log(username)
+
+    if (!username || !username === null) {
+        return res.send("<p class='text-center'>Ops nenhum link foi encontrado</p>")
+    }
 
     try {
 
-        const links = await Links.findAll();
+        const user = await User.findOne({ where: { username } })
+
+        if (!user) {
+            return res.send("<p class='text-center'>Ops nenhum link foi encontrado</p>")
+        }
+
+        const links = await Links.findAll({ where: { userId: user.id } });
+
+        if (links.length === 0) {
+            return res.send("<p class='text-center'>Ops nenhum link foi encontrado</p>")
+        }
 
         let html = links.map((link) => `
             <a class='bg-white flex items-center justify-center w-full p-2 mt-4 rounded'
