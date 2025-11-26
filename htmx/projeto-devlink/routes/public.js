@@ -1,7 +1,14 @@
 const express = require('express')
-const { Links } = require("../models")
+const { Links } = require("../models");
+const { Template } = require('ejs');
 
 const router = express.Router();
+
+router.get("/links/:username", (req, res) => {
+    const username = req.params.username
+
+    res.render("layout", { title: "Maus Links - DevLinks", username: username ,template: "links" })
+})
 
 router.get("/links", async (req, res) => {
     
