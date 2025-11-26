@@ -9,8 +9,11 @@ router.get("/links/:username", (req, res) => {
     res.render("layout", { title: "Meus Links - DevLinks", username: username ,template: "links" })
 })
 
-router.get("/links", async (req, res) => {
+router.get("/list-links", async (req, res) => {
     
+    const username = req.query.username
+    console.log(username)
+
     try {
 
         const links = await Links.findAll();
