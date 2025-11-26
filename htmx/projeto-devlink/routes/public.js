@@ -7,7 +7,7 @@ const router = express.Router();
 router.get("/links/:username", (req, res) => {
     const username = req.params.username
 
-    res.render("layout", { title: "Maus Links - DevLinks", username: username ,template: "links" })
+    res.render("layout", { title: "Meus Links - DevLinks", username: username ,template: "links" })
 })
 
 router.get("/links", async (req, res) => {
