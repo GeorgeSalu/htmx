@@ -1,6 +1,5 @@
 const express = require('express')
 const { Links } = require("../models");
-const { Template } = require('ejs');
 
 const router = express.Router();
 
