@@ -1,7 +1,6 @@
 const express = require("express");
 const authenticationToken = require("../middleware/authUser")
 const { Links } = require("../models");
-const { where } = require("sequelize");
 
 const router = express.Router();
 
